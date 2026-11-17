@@ -2,6 +2,8 @@
 
 **Autores:** Yago Amaro Zamborlini e Pedro Augusto Pereira da Silva  
 **Curso:** Bacharelado em Sistemas de Informação — 6º período  
+**Instituição:** Unilasalle
+**Professor:** Alexandre Louzada.
 **Disciplina:** Linguagem de Programação (Análise e Visualização de Dados com Python)  
 **Fonte:** IBGE, POF 2002–2003, Tabela 1461.
 
