@@ -1,0 +1,88 @@
+{
+  "fonte": "IBGE, Pesquisa de Orçamentos Familiares 2002–2003, Tabela 1461",
+  "n_capitais": 12,
+  "n_indicadores": 8,
+  "media_por_problema": {
+    "Violência ou vandalismo na área de residência": 45.2825,
+    "Pouco espaço": 43.6025,
+    "Rua ou vizinhos barulhentos": 32.8042,
+    "Fundação, paredes ou chão úmidos": 31.0517,
+    "Telhado com goteira": 29.9967,
+    "Madeira das janelas, portas ou assoalhos deteriorados": 27.9392,
+    "Poluição ou problemas ambientais causados pelo trânsito ou indústria": 24.9417,
+    "Casa escura": 19.5842
+  },
+  "media_simples_por_capital": {
+    "Belém": 46.6,
+    "Fortaleza": 39.06,
+    "Recife": 37.8637,
+    "Manaus": 35.8738,
+    "Salvador": 34.1737,
+    "Porto Alegre": 32.9663,
+    "Belo Horizonte": 32.4988,
+    "São Paulo": 32.1838,
+    "Goiânia": 27.2563,
+    "Rio de Janeiro": 25.4262,
+    "Curitiba": 23.25,
+    "Brasília": 15.6513
+  },
+  "estatisticas_descritivas": {
+    "Pouco espaço": {
+      "mean": 43.6025,
+      "median": 45.745,
+      "std": 6.6024,
+      "min": 32.09,
+      "max": 51.63
+    },
+    "Rua ou vizinhos barulhentos": {
+      "mean": 32.8042,
+      "median": 30.9,
+      "std": 7.7127,
+      "min": 20.66,
+      "max": 44.2
+    },
+    "Casa escura": {
+      "mean": 19.5842,
+      "median": 20.555,
+      "std": 6.6769,
+      "min": 5.29,
+      "max": 29.31
+    },
+    "Telhado com goteira": {
+      "mean": 29.9967,
+      "median": 23.67,
+      "std": 15.062,
+      "min": 3.62,
+      "max": 54.91
+    },
+    "Fundação, paredes ou chão úmidos": {
+      "mean": 31.0517,
+      "median": 32.385,
+      "std": 12.7435,
+      "min": 8.62,
+      "max": 50.7
+    },
+    "Madeira das janelas, portas ou assoalhos deteriorados": {
+      "mean": 27.9392,
+      "median": 26.18,
+      "std": 13.7938,
+      "min": 9.3,
+      "max": 56.81
+    },
+    "Poluição ou problemas ambientais causados pelo trânsito ou indústria": {
+      "mean": 24.9417,
+      "median": 23.87,
+      "std": 8.1373,
+      "min": 12.76,
+      "max": 38.11
+    },
+    "Violência ou vandalismo na área de residência": {
+      "mean": 45.2825,
+      "median": 44.595,
+      "std": 9.3376,
+      "min": 24.14,
+      "max": 61.08
+    }
+  },
+  "observacao": "Médias simples entre as 12 capitais; não são estimativas ponderadas para a população brasileira."
+}

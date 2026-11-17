@@ -1,0 +1,134 @@
+[
+  {
+    "capital":"Belém",
+    "Pouco espaço":51.63,
+    "Rua ou vizinhos barulhentos":44.2,
+    "Casa escura":20.95,
+    "Telhado com goteira":54.91,
+    "Fundação, paredes ou chão úmidos":50.7,
+    "Madeira das janelas, portas ou assoalhos deteriorados":56.81,
+    "Poluição ou problemas ambientais causados pelo trânsito ou indústria":32.52,
+    "Violência ou vandalismo na área de residência":61.08
+  },
+  {
+    "capital":"Belo Horizonte",
+    "Pouco espaço":40.48,
+    "Rua ou vizinhos barulhentos":43.99,
+    "Casa escura":17.98,
+    "Telhado com goteira":24.53,
+    "Fundação, paredes ou chão úmidos":25.29,
+    "Madeira das janelas, portas ou assoalhos deteriorados":19.6,
+    "Poluição ou problemas ambientais causados pelo trânsito ou indústria":31.66,
+    "Violência ou vandalismo na área de residência":56.46
+  },
+  {
+    "capital":"Brasília",
+    "Pouco espaço":36.34,
+    "Rua ou vizinhos barulhentos":25.14,
+    "Casa escura":5.29,
+    "Telhado com goteira":3.62,
+    "Fundação, paredes ou chão úmidos":8.62,
+    "Madeira das janelas, portas ou assoalhos deteriorados":9.3,
+    "Poluição ou problemas ambientais causados pelo trânsito ou indústria":12.76,
+    "Violência ou vandalismo na área de residência":24.14
+  },
+  {
+    "capital":"Curitiba",
+    "Pouco espaço":32.09,
+    "Rua ou vizinhos barulhentos":27.19,
+    "Casa escura":9.72,
+    "Telhado com goteira":19.53,
+    "Fundação, paredes ou chão úmidos":16.67,
+    "Madeira das janelas, portas ou assoalhos deteriorados":12.93,
+    "Poluição ou problemas ambientais causados pelo trânsito ou indústria":23.84,
+    "Violência ou vandalismo na área de residência":44.03
+  },
+  {
+    "capital":"Fortaleza",
+    "Pouco espaço":48.07,
+    "Rua ou vizinhos barulhentos":28.84,
+    "Casa escura":29.31,
+    "Telhado com goteira":41.38,
+    "Fundação, paredes ou chão úmidos":48.23,
+    "Madeira das janelas, portas ou assoalhos deteriorados":42.18,
+    "Poluição ou problemas ambientais causados pelo trânsito ou indústria":26.04,
+    "Violência ou vandalismo na área de residência":48.43
+  },
+  {
+    "capital":"Goiânia",
+    "Pouco espaço":36.61,
+    "Rua ou vizinhos barulhentos":20.66,
+    "Casa escura":22.45,
+    "Telhado com goteira":22.81,
+    "Fundação, paredes ou chão úmidos":35.52,
+    "Madeira das janelas, portas ou assoalhos deteriorados":21.06,
+    "Poluição ou problemas ambientais causados pelo trânsito ou indústria":16.98,
+    "Violência ou vandalismo na área de residência":41.96
+  },
+  {
+    "capital":"Manaus",
+    "Pouco espaço":47.34,
+    "Rua ou vizinhos barulhentos":29.54,
+    "Casa escura":25.02,
+    "Telhado com goteira":51.8,
+    "Fundação, paredes ou chão úmidos":31.09,
+    "Madeira das janelas, portas ou assoalhos deteriorados":38.25,
+    "Poluição ou problemas ambientais causados pelo trânsito ou indústria":22.3,
+    "Violência ou vandalismo na área de residência":41.65
+  },
+  {
+    "capital":"Porto Alegre",
+    "Pouco espaço":38.04,
+    "Rua ou vizinhos barulhentos":39.02,
+    "Casa escura":21.29,
+    "Telhado com goteira":22.13,
+    "Fundação, paredes ou chão úmidos":33.68,
+    "Madeira das janelas, portas ou assoalhos deteriorados":34.46,
+    "Poluição ou problemas ambientais causados pelo trânsito ou indústria":23.9,
+    "Violência ou vandalismo na área de residência":51.21
+  },
+  {
+    "capital":"Recife",
+    "Pouco espaço":48.94,
+    "Rua ou vizinhos barulhentos":32.26,
+    "Casa escura":26.02,
+    "Telhado com goteira":41.51,
+    "Fundação, paredes ou chão úmidos":38.07,
+    "Madeira das janelas, portas ou assoalhos deteriorados":29.2,
+    "Poluição ou problemas ambientais causados pelo trânsito ou indústria":38.11,
+    "Violência ou vandalismo na área de residência":48.8
+  },
+  {
+    "capital":"Rio de Janeiro",
+    "Pouco espaço":44.15,
+    "Rua ou vizinhos barulhentos":26.57,
+    "Casa escura":16.9,
+    "Telhado com goteira":19.93,
+    "Fundação, paredes ou chão úmidos":18.89,
+    "Madeira das janelas, portas ou assoalhos deteriorados":15.07,
+    "Poluição ou problemas ambientais causados pelo trânsito ou indústria":20.36,
+    "Violência ou vandalismo na área de residência":41.54
+  },
+  {
+    "capital":"Salvador",
+    "Pouco espaço":50.61,
+    "Rua ou vizinhos barulhentos":38.8,
+    "Casa escura":20.16,
+    "Telhado com goteira":35.42,
+    "Fundação, paredes ou chão úmidos":41.02,
+    "Madeira das janelas, portas ou assoalhos deteriorados":33.25,
+    "Poluição ou problemas ambientais causados pelo trânsito ou indústria":15.2,
+    "Violência ou vandalismo na área de residência":38.93
+  },
+  {
+    "capital":"São Paulo",
+    "Pouco espaço":48.93,
+    "Rua ou vizinhos barulhentos":37.44,
+    "Casa escura":19.92,
+    "Telhado com goteira":22.39,
+    "Fundação, paredes ou chão úmidos":24.84,
+    "Madeira das janelas, portas ou assoalhos deteriorados":23.16,
+    "Poluição ou problemas ambientais causados pelo trânsito ou indústria":35.63,
+    "Violência ou vandalismo na área de residência":45.16
+  }
+]
