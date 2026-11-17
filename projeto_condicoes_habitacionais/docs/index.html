@@ -1,145 +1,291 @@
 <!doctype html>
+
 <html lang="pt-BR"><head>
+
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+
 <meta name="author" content="Yago Amaro Zamborlini; Pedro Augusto Pereira da Silva">
+
 <meta name="description" content="Análise exploratória de problemas domiciliares nas 12 maiores capitais brasileiras, POF 2002–2003.">
+
 <title>Condições habitacionais nas capitais | Artigo</title>
+
 <style>
+
 :root{--navy:#173653;--teal:#168c8a;--ink:#203449;--muted:#64788b;--line:#dfe8ed;--bg:#f1f5f6;--white:#fff}
+
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+
 .shell{max-width:1240px;margin:auto;display:grid;grid-template-columns:245px minmax(0,1fr);min-height:100vh}
+
 aside{background:var(--navy);color:#eaf2f6;padding:30px 20px;position:sticky;top:0;height:100vh}
+
 .brand{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8de0d6;font-weight:800}
+
 aside h2{font-size:22px;line-height:1.25;color:white;margin:28px 0 8px}
+
 aside p{font-size:12px;color:#b9cbd7}
+
 nav{display:grid;gap:6px;margin-top:30px}nav a{color:#d9e6ed;text-decoration:none;padding:8px 10px;border-radius:8px;font-size:13px}nav a:hover{background:#ffffff18}
+
 main{padding:42px clamp(20px,5vw,70px)}article{max-width:930px;margin:auto}
+
 .kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:800}
+
 h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.2}
+
 h1{font-size:clamp(34px,4.2vw,53px);letter-spacing:-.03em;margin:12px 0}
+
 h2{font-size:29px;margin:8px 0 20px}h3{font-size:19px;margin:0 0 8px}
+
 .dek{font-size:19px;color:#536a7c;max-width:760px}
-.byline{font-weight:700;margin-top:24px}.affiliation{font-size:13px;color:var(--muted)}
+
+.byline{font-weight:700;margin-top:24px}.github-button{display:inline-flex;align-items:center;gap:9px;margin-top:16px;padding:11px 18px;border-radius:9px;background:#173653;color:#fff;font-size:14px;font-weight:700;text-decoration:none;transition:background .2s}.github-button:hover{background:#168c8a}.affiliation{font-size:13px;color:var(--muted)}
+
 .meta{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 32px}.meta span{font-size:11px;padding:6px 10px;border:1px solid var(--line);border-radius:30px;background:#fff;color:#52677a}
+
 .hero{background:linear-gradient(115deg,#173653,#1b7779);color:white;border-radius:18px;padding:26px 28px;margin:25px 0}
+
 .hero b{color:#a8e8df;font-size:11px;letter-spacing:.15em;text-transform:uppercase}.hero p{margin:8px 0 0;color:#e4f0f3}
+
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0 42px}
+
 .stat,.panel,.abstract{background:white;border:1px solid var(--line);border-radius:14px;padding:18px}
+
 .stat strong{display:block;color:var(--teal);font-size:28px}.stat span{font-size:12px;color:var(--muted)}
+
 section{margin:54px 0;scroll-margin-top:20px}.abstract{border-left:4px solid var(--teal);padding:24px}.abstract-label{font-size:11px;color:var(--teal);font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+
 .keywords{font-size:13px;color:var(--muted);margin-top:16px}
+
 .questions,.cards,.fair-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+
 .question,.mini,.fair-item{background:white;border:1px solid var(--line);border-radius:12px;padding:16px}
+
 .question b{color:var(--teal)}.question p,.mini p,.fair-item p{font-size:13px;margin:6px 0 0}
+
 .notice{background:#fff8e8;border:1px solid #efdfb7;color:#755a27;border-radius:10px;padding:14px 16px;font-size:13px;margin:20px 0}
+
 .chart{background:white;border:1px solid var(--line);border-radius:14px;padding:20px;margin:20px 0;overflow:hidden}
+
 .chart svg{width:100%;height:auto;display:block}.caption{font-size:11px;color:var(--muted);margin-top:12px}
+
 .mini strong{font-size:23px;color:var(--teal);display:block}.mini small{color:var(--muted);text-transform:uppercase;font-size:10px;letter-spacing:.1em}
+
 .table-scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:850px;font-size:12px}td,th{padding:10px;border-bottom:1px solid var(--line);text-align:right}th{background:#f3f7f8;color:#435a6d;font-size:11px}th:first-child{text-align:left}td{font-variant-numeric:tabular-nums}
+
 pre{white-space:pre-wrap;overflow:auto;background:#122d47;color:#e4f1f5;padding:18px;border-radius:12px;font-size:12px;line-height:1.6}
+
 .fair{background:#eaf3f7;border:1px solid #d3e3eb;border-radius:15px;padding:22px}.fair-grid{grid-template-columns:repeat(2,1fr)}.fair-item{background:#ffffffc9}
+
 ol li{margin-bottom:12px}footer{border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:12px;margin:55px 0 20px}
+
 @media(max-width:850px){.shell{display:block}aside{position:relative;height:auto;padding:18px 20px}aside h2{margin:12px 0 5px}nav{display:flex;overflow:auto;margin-top:12px}nav a{white-space:nowrap}main{padding:26px 16px}}
+
 @media(max-width:600px){.stats,.questions,.cards,.fair-grid{grid-template-columns:1fr}.hero{padding:20px}}
+
 @media print{body{background:white}.shell{display:block}aside{display:none}main{padding:0}.chart,.panel,.abstract{break-inside:avoid}}
+
 </style></head>
+
 <body><div class="shell">
+
 <aside><div class="brand">Pesquisa aplicada · 2026</div><h2>Habitação<br>em análise</h2><p>Artigo acadêmico de análise exploratória de dados públicos.</p>
+
 <nav aria-label="Sumário"><a href="#resumo">Resumo</a><a href="#introducao">Introdução</a><a href="#metodologia">Metodologia</a><a href="#resultados">Resultados</a><a href="#conclusao">Conclusão</a><a href="#fair">FAIR</a><a href="#referencias">Referências</a></nav>
+
 </aside>
+
 <main><article>
+
 <div class="kicker">Artigo científico · análise e visualização de dados</div>
+
 <h1>Condições habitacionais nas 12 maiores capitais brasileiras</h1>
+
 <p class="dek">Uma análise descritiva dos problemas domiciliares registrados pela Pesquisa de Orçamentos Familiares de 2002–2003.</p>
+
 <div class="byline">Yago Amaro Zamborlini · Pedro Augusto Pereira da Silva</div>
+
+<a class="github-button" href="https://github.com/Yokamaro/ProjetoG2-PercentualFamilias" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span> Acessar repositório no GitHub</a>
+
 <div class="affiliation">Bacharelado em Sistemas de Informação · 6º período · Linguagem de Programação</div>
-<div class="affiliation">Instituição: [preencher] · Professor(a): [preencher]</div>
+
+<div class="affiliation">Instituição: Unilasalle · Professor(a): Alexandre Louzada</div>
+
 <div class="meta"><span>IBGE · POF 2002–2003</span><span>12 capitais</span><span>8 indicadores</span><span>Dados públicos</span></div>
+
 <div class="hero"><b>Panorama do estudo</b><p>O estudo compara a proporção de famílias que declararam problemas em seus domicílios ou no entorno residencial. A análise descreve padrões e diferenças entre as capitais incluídas na tabela histórica do IBGE.</p></div>
+
 <div class="stats"><div class="stat"><strong>12</strong><span>capitais analisadas</span></div><div class="stat"><strong>8</strong><span>problemas investigados</span></div><div class="stat"><strong>2002–03</strong><span>período de referência</span></div></div>
 
+
+
 <section id="resumo"><div class="kicker">Síntese</div><h2>Resumo</h2><div class="abstract"><div class="abstract-label">Resumo</div>
+
 <p>Este artigo apresenta uma análise exploratória das condições habitacionais declaradas por famílias residentes nas 12 maiores capitais brasileiras, com base na Tabela 1461 da Pesquisa de Orçamentos Familiares (POF) 2002–2003, do Instituto Brasileiro de Geografia e Estatística (IBGE). A tabela reúne percentuais de respostas afirmativas para oito problemas domiciliares: falta de espaço, ruído, pouca iluminação, goteiras, umidade, deterioração de componentes da residência, poluição e violência ou vandalismo no entorno. Os dados foram organizados em formato tabular e examinados por meio de estatística descritiva, comparação entre capitais e visualizações. Na média aritmética simples das 12 capitais, o problema com maior percentual foi <b>violência ou vandalismo na área de residência</b> (45.28%), enquanto <b>casa escura</b> apresentou o menor valor médio (19.58%). Considerando a média simples dos oito indicadores por capital, Belém apresentou o maior resultado (46.60%) e Brasília o menor (15.65%). Os resultados descrevem exclusivamente os valores da tabela histórica e não devem ser interpretados como retrato atual da habitação brasileira. O trabalho documenta a origem, a estrutura e as limitações dos dados, buscando favorecer transparência e reutilização conforme os princípios FAIR.</p>
+
 <div class="keywords"><b>Palavras-chave:</b> condições habitacionais; dados públicos; IBGE; POF; análise exploratória; Python.</div></div></section>
 
+
+
 <section id="introducao"><div class="kicker">01 · Contexto e objetivo</div><h2>Introdução</h2>
+
 <p>As condições físicas da moradia e do ambiente residencial estão relacionadas ao conforto, à segurança e à qualidade de vida das famílias. Indicadores de problemas domiciliares permitem observar dimensões da habitação que não são representadas apenas pela existência de uma residência.</p>
+
 <p>O acesso a estatísticas públicas possibilita comparar diferentes condições e observar variações entre áreas urbanas. Este trabalho utiliza a Tabela 1461, que apresenta percentuais de famílias que responderam “Sim” ou “Não” a oito problemas em 12 capitais brasileiras no período 2002–2003.</p>
+
 <p>O objetivo é descrever os problemas mais frequentemente declarados e comparar os percentuais entre as capitais, sem atribuir causalidade às diferenças observadas.</p>
+
 <h3>Perguntas de pesquisa</h3><div class="questions">
+
 <div class="question"><b>RQ1</b><p>Quais problemas domiciliares apresentam os maiores percentuais médios entre as 12 capitais?</p></div>
+
 <div class="question"><b>RQ2</b><p>Como os percentuais de cada problema variam entre as capitais incluídas na tabela?</p></div>
+
 <div class="question"><b>RQ3</b><p>Quais capitais apresentam maiores e menores médias simples considerando os oito indicadores?</p></div></div>
+
 <div class="notice"><b>Delimitação:</b> os dados são de 2002–2003 e abrangem somente as 12 capitais da tabela. A média simples entre capitais não é uma estimativa ponderada para a população brasileira.</div>
+
 </section>
 
+
+
 <section id="metodologia"><div class="kicker">02 · Procedimentos</div><h2>Metodologia e pipeline de dados</h2>
+
 <p>A fonte primária é a Tabela 1461 — “Famílias, por existência de problemas no domicílio, segundo as 12 maiores capitais 2002–2003 (%)”. A planilha apresenta uma linha por capital e pares de colunas “Sim” e “Não” para cada um dos oito problemas. A análise seleciona os percentuais “Sim”, mantendo a unidade percentual.</p>
+
 <div class="cards">
+
 <div class="mini"><h3>Ingestão</h3><p>Leitura da planilha original fornecida e extração das 12 capitais e oito variáveis afirmativas.</p></div>
+
 <div class="mini"><h3>Tratamento</h3><p>Padronização dos nomes de colunas, conversão para valores numéricos e verificação de valores ausentes e duplicidades.</p></div>
+
 <div class="mini"><h3>Análise</h3><p>Cálculo de médias, medianas, desvios-padrão, mínimos e máximos por indicador, além de médias simples por capital.</p></div>
+
 </div>
+
 <h3>Trecho do pipeline em Python</h3>
+
 <pre><code>import pandas as pd
+
+
 
 df = pd.read_csv("data/raw/tabela_1461_fonte.csv")
 
+
+
 indicadores = [col for col in df.columns if col != "capital"]
+
 df[indicadores] = df[indicadores].apply(
-    pd.to_numeric, errors="coerce"
+
+    pd.to_numeric, errors="coerce"
+
 )
 
+
+
 # Métricas descritivas por problema
+
 resumo = df[indicadores].describe().T
 
+
+
 # Média aritmética simples dos oito indicadores por capital
+
 df["media_simples"] = df[indicadores].mean(axis=1)
 
+
+
 print(resumo)
+
 print(df[["capital", "media_simples"]])</code></pre>
+
 <p>O arquivo original XLS é preservado em <code>data/raw/</code>. A extração tabular é disponibilizada em CSV UTF-8, e os dados tratados e o resumo estatístico ficam em <code>data/processed/</code>. Como a fonte contém percentuais agregados, não foi realizada imputação de microdados nem recálculo de percentuais a partir de registros individuais.</p>
+
 </section>
+
+
 
 <section id="resultados"><div class="kicker">03 · Evidências observadas</div><h2>Resultados e discussão</h2>
+
 <p>As médias abaixo são aritméticas simples dos percentuais “Sim” nas 12 capitais, sem ponderação por população ou tamanho amostral.</p>
+
 <div class="chart"><h3>Média dos problemas nas capitais</h3><svg viewBox="0 0 860 390" role="img" aria-label="Gráfico de barras horizontais" xmlns="http://www.w3.org/2000/svg"><line x1="290.0" y1="20" x2="290.0" y2="355" stroke="#e5edf1"/><text x="290.0" y="382" text-anchor="middle" fill="#60758a" font-size="11">0%</text><line x1="394.5" y1="20" x2="394.5" y2="355" stroke="#e5edf1"/><text x="394.5" y="382" text-anchor="middle" fill="#60758a" font-size="11">10%</text><line x1="499.0" y1="20" x2="499.0" y2="355" stroke="#e5edf1"/><text x="499.0" y="382" text-anchor="middle" fill="#60758a" font-size="11">20%</text><line x1="603.5" y1="20" x2="603.5" y2="355" stroke="#e5edf1"/><text x="603.5" y="382" text-anchor="middle" fill="#60758a" font-size="11">30%</text><line x1="708.0" y1="20" x2="708.0" y2="355" stroke="#e5edf1"/><text x="708.0" y="382" text-anchor="middle" fill="#60758a" font-size="11">40%</text><line x1="812.5" y1="20" x2="812.5" y2="355" stroke="#e5edf1"/><text x="812.5" y="382" text-anchor="middle" fill="#60758a" font-size="11">50%</text><line x1="917.0" y1="20" x2="917.0" y2="355" stroke="#e5edf1"/><text x="917.0" y="382" text-anchor="middle" fill="#60758a" font-size="11">60%</text><text x="278" y="45.9" text-anchor="end" fill="#29435a" font-size="12">Violência ou vandalismo na área de residência</text><rect x="290" y="28.4" width="473.2" height="24.3" rx="5" fill="#168c8a"/><text x="770.2" y="45.9" fill="#29435a" font-size="11">45.28%</text><text x="278" y="87.7" text-anchor="end" fill="#29435a" font-size="12">Pouco espaço</text><rect x="290" y="70.2" width="455.7" height="24.3" rx="5" fill="#168c8a"/><text x="752.7" y="87.7" fill="#29435a" font-size="11">43.60%</text><text x="278" y="129.6" text-anchor="end" fill="#29435a" font-size="12">Rua ou vizinhos barulhentos</text><rect x="290" y="112.1" width="342.8" height="24.3" rx="5" fill="#168c8a"/><text x="639.8" y="129.6" fill="#29435a" font-size="11">32.80%</text><text x="278" y="171.5" text-anchor="end" fill="#29435a" font-size="12">Fundação, paredes ou chão úmidos</text><rect x="290" y="154.0" width="324.5" height="24.3" rx="5" fill="#168c8a"/><text x="621.5" y="171.5" fill="#29435a" font-size="11">31.05%</text><text x="278" y="213.4" text-anchor="end" fill="#29435a" font-size="12">Telhado com goteira</text><rect x="290" y="195.9" width="313.5" height="24.3" rx="5" fill="#168c8a"/><text x="610.5" y="213.4" fill="#29435a" font-size="11">30.00%</text><text x="278" y="255.2" text-anchor="end" fill="#29435a" font-size="12">Madeira das janelas, portas ou assoalhos deteriorados</text><rect x="290" y="237.8" width="292.0" height="24.3" rx="5" fill="#168c8a"/><text x="589.0" y="255.2" fill="#29435a" font-size="11">27.94%</text><text x="278" y="297.1" text-anchor="end" fill="#29435a" font-size="12">Poluição ou problemas ambientais causados pelo trânsito ou indústria</text><rect x="290" y="279.6" width="260.6" height="24.3" rx="5" fill="#168c8a"/><text x="557.6" y="297.1" fill="#29435a" font-size="11">24.94%</text><text x="278" y="339.0" text-anchor="end" fill="#29435a" font-size="12">Casa escura</text><rect x="290" y="321.5" width="204.7" height="24.3" rx="5" fill="#168c8a"/><text x="501.7" y="339.0" fill="#29435a" font-size="11">19.58%</text></svg><p class="caption">Figura 1. Média simples dos percentuais “Sim” por problema. Fonte: elaboração própria a partir da Tabela 1461 (IBGE/POF 2002–2003).</p></div>
+
 <div class="cards"><div class="mini"><small>Maior média por problema</small><strong>45.28%</strong><p>Violência ou vandalismo na área de residência</p></div><div class="mini"><small>Menor média por problema</small><strong>19.58%</strong><p>Casa escura</p></div></div>
+
 <p>O indicador com maior média foi <b>violência ou vandalismo na área de residência</b>, com 45.28%, seguido por <b>pouco espaço</b>, com 43.60%. O menor valor médio foi observado em <b>casa escura</b> (19.58%). Esses resultados indicam quais problemas foram relativamente mais declarados no conjunto das capitais analisadas, sem implicar que a mesma ordem se repita em cada localidade.</p>
+
 <div class="chart"><h3>Média simples dos oito indicadores por capital</h3><svg viewBox="0 0 860 390" role="img" aria-label="Gráfico de barras horizontais" xmlns="http://www.w3.org/2000/svg"><line x1="290.0" y1="20" x2="290.0" y2="355" stroke="#e5edf1"/><text x="290.0" y="382" text-anchor="middle" fill="#60758a" font-size="11">0%</text><line x1="386.4" y1="20" x2="386.4" y2="355" stroke="#e5edf1"/><text x="386.4" y="382" text-anchor="middle" fill="#60758a" font-size="11">10%</text><line x1="482.7" y1="20" x2="482.7" y2="355" stroke="#e5edf1"/><text x="482.7" y="382" text-anchor="middle" fill="#60758a" font-size="11">20%</text><line x1="579.1" y1="20" x2="579.1" y2="355" stroke="#e5edf1"/><text x="579.1" y="382" text-anchor="middle" fill="#60758a" font-size="11">30%</text><line x1="675.5" y1="20" x2="675.5" y2="355" stroke="#e5edf1"/><text x="675.5" y="382" text-anchor="middle" fill="#60758a" font-size="11">40%</text><line x1="771.8" y1="20" x2="771.8" y2="355" stroke="#e5edf1"/><text x="771.8" y="382" text-anchor="middle" fill="#60758a" font-size="11">50%</text><line x1="868.2" y1="20" x2="868.2" y2="355" stroke="#e5edf1"/><text x="868.2" y="382" text-anchor="middle" fill="#60758a" font-size="11">60%</text><text x="278" y="37.2" text-anchor="end" fill="#29435a" font-size="12">Belém</text><rect x="290" y="25.6" width="449.1" height="16.2" rx="5" fill="#2878a8"/><text x="746.1" y="37.2" fill="#29435a" font-size="11">46.60%</text><text x="278" y="65.2" text-anchor="end" fill="#29435a" font-size="12">Fortaleza</text><rect x="290" y="53.5" width="376.4" height="16.2" rx="5" fill="#2878a8"/><text x="673.4" y="65.2" fill="#29435a" font-size="11">39.06%</text><text x="278" y="93.1" text-anchor="end" fill="#29435a" font-size="12">Recife</text><rect x="290" y="81.4" width="364.9" height="16.2" rx="5" fill="#2878a8"/><text x="661.9" y="93.1" fill="#29435a" font-size="11">37.86%</text><text x="278" y="121.0" text-anchor="end" fill="#29435a" font-size="12">Manaus</text><rect x="290" y="109.3" width="345.7" height="16.2" rx="5" fill="#2878a8"/><text x="642.7" y="121.0" fill="#29435a" font-size="11">35.87%</text><text x="278" y="148.9" text-anchor="end" fill="#29435a" font-size="12">Salvador</text><rect x="290" y="137.3" width="329.3" height="16.2" rx="5" fill="#2878a8"/><text x="626.3" y="148.9" fill="#29435a" font-size="11">34.17%</text><text x="278" y="176.8" text-anchor="end" fill="#29435a" font-size="12">Porto Alegre</text><rect x="290" y="165.2" width="317.7" height="16.2" rx="5" fill="#2878a8"/><text x="614.7" y="176.8" fill="#29435a" font-size="11">32.97%</text><text x="278" y="204.7" text-anchor="end" fill="#29435a" font-size="12">Belo Horizonte</text><rect x="290" y="193.1" width="313.2" height="16.2" rx="5" fill="#2878a8"/><text x="610.2" y="204.7" fill="#29435a" font-size="11">32.50%</text><text x="278" y="232.7" text-anchor="end" fill="#29435a" font-size="12">São Paulo</text><rect x="290" y="221.0" width="310.1" height="16.2" rx="5" fill="#2878a8"/><text x="607.1" y="232.7" fill="#29435a" font-size="11">32.18%</text><text x="278" y="260.6" text-anchor="end" fill="#29435a" font-size="12">Goiânia</text><rect x="290" y="248.9" width="262.7" height="16.2" rx="5" fill="#2878a8"/><text x="559.7" y="260.6" fill="#29435a" font-size="11">27.26%</text><text x="278" y="288.5" text-anchor="end" fill="#29435a" font-size="12">Rio de Janeiro</text><rect x="290" y="276.8" width="245.0" height="16.2" rx="5" fill="#2878a8"/><text x="542.0" y="288.5" fill="#29435a" font-size="11">25.43%</text><text x="278" y="316.4" text-anchor="end" fill="#29435a" font-size="12">Curitiba</text><rect x="290" y="304.8" width="224.0" height="16.2" rx="5" fill="#2878a8"/><text x="521.0" y="316.4" fill="#29435a" font-size="11">23.25%</text><text x="278" y="344.3" text-anchor="end" fill="#29435a" font-size="12">Brasília</text><rect x="290" y="332.7" width="150.8" height="16.2" rx="5" fill="#2878a8"/><text x="447.8" y="344.3" fill="#29435a" font-size="11">15.65%</text></svg><p class="caption">Figura 2. Média aritmética simples dos oito indicadores em cada capital. Trata-se de uma síntese exploratória, não de índice oficial de qualidade habitacional.</p></div>
+
 <p>Na comparação agregada, Belém apresenta a maior média simples (46.60%), enquanto Brasília registra a menor (15.65%). A média reúne dimensões distintas — como ruído, umidade e violência no entorno — sem atribuir pesos de gravidade; por isso, deve ser interpretada apenas como recurso de ordenação descritiva.</p>
+
 <div class="chart"><h3>Comparação detalhada por capital</h3><div class='table-scroll'><table><thead><tr><th>Capital</th><th>Pouco espaço</th><th>Ruído</th><th>Casa escura</th><th>Goteira</th><th>Umidade</th><th>Madeira deteriorada</th><th>Poluição</th><th>Violência/vandalismo</th></tr></thead><tbody><tr><th scope='row'>Belém</th><td style='background:rgba(22,140,138,0.69)'>51.63%</td><td style='background:rgba(22,140,138,0.59)'>44.20%</td><td style='background:rgba(22,140,138,0.28)'>20.95%</td><td style='background:rgba(22,140,138,0.73)'>54.91%</td><td style='background:rgba(22,140,138,0.68)'>50.70%</td><td style='background:rgba(22,140,138,0.76)'>56.81%</td><td style='background:rgba(22,140,138,0.43)'>32.52%</td><td style='background:rgba(22,140,138,0.78)'>61.08%</td></tr><tr><th scope='row'>Belo Horizonte</th><td style='background:rgba(22,140,138,0.54)'>40.48%</td><td style='background:rgba(22,140,138,0.59)'>43.99%</td><td style='background:rgba(22,140,138,0.24)'>17.98%</td><td style='background:rgba(22,140,138,0.33)'>24.53%</td><td style='background:rgba(22,140,138,0.34)'>25.29%</td><td style='background:rgba(22,140,138,0.26)'>19.60%</td><td style='background:rgba(22,140,138,0.42)'>31.66%</td><td style='background:rgba(22,140,138,0.75)'>56.46%</td></tr><tr><th scope='row'>Brasília</th><td style='background:rgba(22,140,138,0.48)'>36.34%</td><td style='background:rgba(22,140,138,0.34)'>25.14%</td><td style='background:rgba(22,140,138,0.10)'>5.29%</td><td style='background:rgba(22,140,138,0.10)'>3.62%</td><td style='background:rgba(22,140,138,0.11)'>8.62%</td><td style='background:rgba(22,140,138,0.12)'>9.30%</td><td style='background:rgba(22,140,138,0.17)'>12.76%</td><td style='background:rgba(22,140,138,0.32)'>24.14%</td></tr><tr><th scope='row'>Curitiba</th><td style='background:rgba(22,140,138,0.43)'>32.09%</td><td style='background:rgba(22,140,138,0.36)'>27.19%</td><td style='background:rgba(22,140,138,0.13)'>9.72%</td><td style='background:rgba(22,140,138,0.26)'>19.53%</td><td style='background:rgba(22,140,138,0.22)'>16.67%</td><td style='background:rgba(22,140,138,0.17)'>12.93%</td><td style='background:rgba(22,140,138,0.32)'>23.84%</td><td style='background:rgba(22,140,138,0.59)'>44.03%</td></tr><tr><th scope='row'>Fortaleza</th><td style='background:rgba(22,140,138,0.64)'>48.07%</td><td style='background:rgba(22,140,138,0.38)'>28.84%</td><td style='background:rgba(22,140,138,0.39)'>29.31%</td><td style='background:rgba(22,140,138,0.55)'>41.38%</td><td style='background:rgba(22,140,138,0.64)'>48.23%</td><td style='background:rgba(22,140,138,0.56)'>42.18%</td><td style='background:rgba(22,140,138,0.35)'>26.04%</td><td style='background:rgba(22,140,138,0.65)'>48.43%</td></tr><tr><th scope='row'>Goiânia</th><td style='background:rgba(22,140,138,0.49)'>36.61%</td><td style='background:rgba(22,140,138,0.28)'>20.66%</td><td style='background:rgba(22,140,138,0.30)'>22.45%</td><td style='background:rgba(22,140,138,0.30)'>22.81%</td><td style='background:rgba(22,140,138,0.47)'>35.52%</td><td style='background:rgba(22,140,138,0.28)'>21.06%</td><td style='background:rgba(22,140,138,0.23)'>16.98%</td><td style='background:rgba(22,140,138,0.56)'>41.96%</td></tr><tr><th scope='row'>Manaus</th><td style='background:rgba(22,140,138,0.63)'>47.34%</td><td style='background:rgba(22,140,138,0.39)'>29.54%</td><td style='background:rgba(22,140,138,0.33)'>25.02%</td><td style='background:rgba(22,140,138,0.69)'>51.80%</td><td style='background:rgba(22,140,138,0.41)'>31.09%</td><td style='background:rgba(22,140,138,0.51)'>38.25%</td><td style='background:rgba(22,140,138,0.30)'>22.30%</td><td style='background:rgba(22,140,138,0.56)'>41.65%</td></tr><tr><th scope='row'>Porto Alegre</th><td style='background:rgba(22,140,138,0.51)'>38.04%</td><td style='background:rgba(22,140,138,0.52)'>39.02%</td><td style='background:rgba(22,140,138,0.28)'>21.29%</td><td style='background:rgba(22,140,138,0.30)'>22.13%</td><td style='background:rgba(22,140,138,0.45)'>33.68%</td><td style='background:rgba(22,140,138,0.46)'>34.46%</td><td style='background:rgba(22,140,138,0.32)'>23.90%</td><td style='background:rgba(22,140,138,0.68)'>51.21%</td></tr><tr><th scope='row'>Recife</th><td style='background:rgba(22,140,138,0.65)'>48.94%</td><td style='background:rgba(22,140,138,0.43)'>32.26%</td><td style='background:rgba(22,140,138,0.35)'>26.02%</td><td style='background:rgba(22,140,138,0.55)'>41.51%</td><td style='background:rgba(22,140,138,0.51)'>38.07%</td><td style='background:rgba(22,140,138,0.39)'>29.20%</td><td style='background:rgba(22,140,138,0.51)'>38.11%</td><td style='background:rgba(22,140,138,0.65)'>48.80%</td></tr><tr><th scope='row'>Rio de Janeiro</th><td style='background:rgba(22,140,138,0.59)'>44.15%</td><td style='background:rgba(22,140,138,0.35)'>26.57%</td><td style='background:rgba(22,140,138,0.23)'>16.90%</td><td style='background:rgba(22,140,138,0.27)'>19.93%</td><td style='background:rgba(22,140,138,0.25)'>18.89%</td><td style='background:rgba(22,140,138,0.20)'>15.07%</td><td style='background:rgba(22,140,138,0.27)'>20.36%</td><td style='background:rgba(22,140,138,0.55)'>41.54%</td></tr><tr><th scope='row'>Salvador</th><td style='background:rgba(22,140,138,0.67)'>50.61%</td><td style='background:rgba(22,140,138,0.52)'>38.80%</td><td style='background:rgba(22,140,138,0.27)'>20.16%</td><td style='background:rgba(22,140,138,0.47)'>35.42%</td><td style='background:rgba(22,140,138,0.55)'>41.02%</td><td style='background:rgba(22,140,138,0.44)'>33.25%</td><td style='background:rgba(22,140,138,0.20)'>15.20%</td><td style='background:rgba(22,140,138,0.52)'>38.93%</td></tr><tr><th scope='row'>São Paulo</th><td style='background:rgba(22,140,138,0.65)'>48.93%</td><td style='background:rgba(22,140,138,0.50)'>37.44%</td><td style='background:rgba(22,140,138,0.27)'>19.92%</td><td style='background:rgba(22,140,138,0.30)'>22.39%</td><td style='background:rgba(22,140,138,0.33)'>24.84%</td><td style='background:rgba(22,140,138,0.31)'>23.16%</td><td style='background:rgba(22,140,138,0.48)'>35.63%</td><td style='background:rgba(22,140,138,0.60)'>45.16%</td></tr></tbody></table></div><p class="caption">Tabela 1. Percentuais originais de respostas “Sim” para cada problema e capital.</p></div>
+
 <p>A matriz permite identificar contrastes específicos sem ocultar a variação interna. A leitura deve considerar a natureza de cada indicador e o contexto histórico dos dados. A fonte informa que as respostas foram prestadas por um único membro indicado pela família e que foram apresentados oito problemas, solicitando resposta “sim” ou “não”.</p>
+
 <div class="notice"><b>Limitações estatísticas:</b> a planilha disponibilizada não contém microdados, tamanhos amostrais por célula, erros-padrão ou intervalos de confiança. Assim, as diferenças são discutidas descritivamente e não são apresentadas como estatisticamente significativas.</div>
+
 </section>
+
+
 
 <section id="conclusao"><div class="kicker">04 · Síntese final</div><h2>Conclusão</h2>
+
 <p>A análise da Tabela 1461 permitiu comparar oito problemas domiciliares declarados por famílias em 12 capitais brasileiras no período 2002–2003. Violência ou vandalismo na área de residência apresentou a maior média simples entre os indicadores (45.28%), enquanto Casa escura apresentou a menor (19.58%). Na síntese dos oito indicadores por capital, Belém obteve o maior resultado (46.60%) e Brasília o menor (15.65%).</p>
+
 <p>Os resultados respondem às perguntas de pesquisa ao apontar os problemas mais frequentes, apresentar diferenças entre capitais e sintetizar os valores por localidade. Entretanto, a média simples dos indicadores não é um índice oficial, pois reúne dimensões distintas sem ponderação por gravidade ou relevância.</p>
+
 <p>Entre as limitações estão a antiguidade dos dados, a cobertura restrita às 12 capitais, o caráter agregado da tabela e a ausência de medidas de incerteza no arquivo utilizado. Estudos futuros podem comparar novas edições de pesquisas domiciliares, ampliar a cobertura territorial e investigar associações com variáveis socioeconômicas, desde que existam fontes compatíveis.</p>
+
 </section>
 
+
+
 <section id="fair"><div class="kicker">05 · Ciência aberta</div><h2>Disponibilidade dos dados e declaração FAIR</h2>
+
 <div class="fair"><h3>Declaração de aderência FAIR</h3><div class="fair-grid">
+
 <div class="fair-item"><b>Findable · Localizável</b><p>O README identifica o estudo, autoria, fonte, período, palavras-chave e arquivos, facilitando localizar os dados e os resultados.</p></div>
+
 <div class="fair-item"><b>Accessible · Acessível</b><p>O repositório pode ser publicado publicamente no GitHub, e o artigo pode ser disponibilizado pelo GitHub Pages sem autenticação proprietária.</p></div>
+
 <div class="fair-item"><b>Interoperable · Interoperável</b><p>Os dados tratados são fornecidos em CSV UTF-8 e JSON, com dicionário de dados em Markdown.</p></div>
+
 <div class="fair-item"><b>Reusable · Reutilizável</b><p>O projeto inclui licença, script ETL, notebook e dependências com versões fixadas para apoiar a reprodução.</p></div>
+
 </div><pre><code>git clone [URL_DO_REPOSITORIO]
+
 cd projeto-condicoes-habitacionais
+
 python -m venv .venv
+
 # Windows: .venv\Scripts\activate
+
 # Linux/macOS: source .venv/bin/activate
+
 pip install -r requirements.txt
+
 python src/etl.py</code></pre>
+
 <p class="caption">Substitua a URL pelo endereço real depois de criar o repositório. O deploy do artigo deve apontar para a pasta docs/ nas configurações do GitHub Pages.</p></div></section>
 
+
+
 <section id="referencias"><div class="kicker">06 · Fontes consultadas</div><h2>Referências</h2>
+
 <ol>
+
 <li>INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). <i>Pesquisa de Orçamentos Familiares 2002–2003: Tabela 1461 — Famílias, por existência de problemas no domicílio, segundo as 12 maiores capitais</i>. Diretoria de Pesquisas, Coordenação de Índices de Preços, 2002–2003. Planilha fornecida para o projeto.</li>
+
 <li>WILKINSON, Mark D. et al. The FAIR Guiding Principles for scientific data management and stewardship. <i>Scientific Data</i>, v. 3, art. 160018, 2016. DOI: 10.1038/sdata.2016.18.</li>
+
 <li>MCKINNEY, Wes. <i>Python for Data Analysis: Data Wrangling with pandas, NumPy, and Jupyter</i>. 3. ed. Sebastopol: O’Reilly Media, 2022.</li>
+
 <li>PANDAS DEVELOPMENT TEAM. <i>pandas documentation</i>. Disponível em: https://pandas.pydata.org/docs/.</li>
+
 </ol></section>
-<footer><b>Autoria:</b> Yago Amaro Zamborlini e Pedro Augusto Pereira da Silva.<br><b>Nota:</b> completar instituição, nome do(a) professor(a) e URL do repositório antes da entrega. Os gráficos deste documento são SVG embutidos e não dependem de bibliotecas externas para carregar.</footer>
+
+<footer><b>Autoria:</b> Yago Amaro Zamborlini e Pedro Augusto Pereira da Silva.<br>Os gráficos deste documento são SVG embutidos e não dependem de bibliotecas externas para carregar.</footer>
+
 </article></main></div></body></html>
