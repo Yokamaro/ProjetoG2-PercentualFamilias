@@ -6,6 +6,7 @@
 **Professor:** Alexandre Louzada.
 **Disciplina:** Linguagem de Programação (Análise e Visualização de Dados com Python)  
 **Fonte:** IBGE, POF 2002–2003, Tabela 1461.
+**GitHub Pages**: https://yokamaro.github.io/ProjetoG2-PercentualFamilias/
 
 ## Resumo
 Projeto de análise exploratória de oito problemas domiciliares declarados por famílias em 12 capitais brasileiras. O estudo usa percentuais de respostas “Sim” da Tabela 1461, calcula estatísticas descritivas e apresenta visualizações no artigo HTML.
